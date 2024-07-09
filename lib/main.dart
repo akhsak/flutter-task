@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:task/controller/authantication_controller.dart';
 import 'package:task/controller/cart_controller.dart';
 import 'package:task/controller/home_provider.dart';
 import 'package:task/view/home_page.dart';
@@ -21,10 +22,11 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => HomePageProvider()),
         ChangeNotifierProvider(create: (context) => CartController()),
+        ChangeNotifierProvider(create: (context) => AuthController()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: LoginScreen(),
       ),
     );
   }
